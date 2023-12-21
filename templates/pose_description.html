@@ -1,0 +1,93 @@
+<!-- pose_description.html -->
+{% extends 'headerPage.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa; /* Light gray background */
+        background-image: url('{% static "Images/backgroundtry.png" %}'); /* Add your background image path */
+        background-size: cover; /* Ensure the background image covers the entire body */
+        background-attachment: fixed; /* Fixed background image */
+        background-position: center; /* Center the background image */
+    }
+
+    .container {
+        margin-top: 5px;
+        margin-bottom: 5px; /* Add space from the top */
+    }
+
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    h2.text-center.mb-4 {
+        font-size: 28px;
+        font-weight: bold;
+        color: black; /* Blue color for headings */
+    }
+
+    h3.text-center {
+        font-size: 24px;
+        color: #6c757d; /* Dark gray color for labels */
+    }
+
+    p.text-center {
+        font-size: 18px;
+        color: #6c757d; /* Light gray color for text */
+    }
+
+    img.img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .col-md-6 {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Pose Name</h2>
+                    {% if predicted_label %}
+                        <h3 class="text-center">{{ predicted_label }}</h3>
+                    {% else %}
+                        <p class="text-center">No predicted label available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Pose Description</h2>
+                    {% if description %}
+                        <p class="text-center">{{ description }}</p>
+                    {% else %}
+                        <p class="text-center">Description not available.</p>
+                    {% endif %}
+
+                    {% if output_image_path %}
+                        <h2 class="text-center mt-4">Output Image</h2>
+                        <div class="text-center">
+                            <img src="{{ output_image_path }}" alt="output-image" class="img-fluid">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

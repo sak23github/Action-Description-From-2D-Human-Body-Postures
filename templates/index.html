@@ -1,0 +1,174 @@
+<!-- pose_description.html -->
+{% extends 'headerPage.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        color: #000; /* Set text color to black */
+        opacity: 0; /* Initially set opacity to 0 for the fade-in effect */
+        animation: fadeIn ease-in-out 1.5s forwards; /* Animation for fade-in */
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .container-fluid {
+        height: 100vh;
+        background-image: url('{% static "C:\Pose_Detection\static\Images\bg.png" %}');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        background-color: black;
+        border-color: black;
+        font-size: 18px; /* Increase the font size */
+        cursor: pointer; /* Add cursor style */
+    }
+
+    .btn-primary:hover {
+        background-color: Blue;
+        border-color: Blue;
+    }
+
+    hr {
+        border-top: 1px solid #ddd;
+    }
+
+    /* Styling for specific elements */
+    h2.text-center.mb-4,
+    h2.text-center.mt-4 {
+        font-size: 24px; /* Increase the font size */
+        font-weight: bold; /* Make it bold */
+    }
+
+    /* Styling for the Choose File input */
+    input[name="filePath"] {
+        font-size: 16px; /* Increase the font size */
+        padding: 10px; /* Add padding */
+        border: 1px solid #ccc; /* Add a border */
+        border-radius: 4px; /* Add border-radius */
+        background-color: #fff; /* Set background color to white */
+        cursor: pointer; /* Add cursor style */
+    }
+
+    /* New styles for the layout */
+    .result-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .result-left,
+    .result-right {
+        opacity: 0; /* Initially set opacity to 0 for the fade-in effect */
+        animation: fadeIn ease-in-out 1.5s forwards; /* Animation for fade-in */
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .result-left {
+        flex: 0 0 48%; /* Adjust as needed */
+        margin-right: 4%; /* Adjust the gap between left and right columns */
+    }
+
+    .result-right {
+        flex: 0 0 48%; /* Adjust as needed */
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Card for Image Upload -->
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Upload a picture to evaluate your yoga posture</h2>
+
+                    <form method="post" enctype="multipart/form-data" action="{% url 'predictImage' %}" class="mb-4">
+                        {% csrf_token %}
+                        <div class="form-group text-center">
+                            <label for="filePath">Choose Image File:</label>
+                            <input name="filePath" type="file" class="form-control-file">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mb-3" style="text-decoration: none; color: #fff; cursor: pointer;">
+                            Submit
+                        </button>
+
+                        <!-- Display Image Prediction Result and Output Image -->
+                        {% if filePathName %}
+                            <hr>
+                            <div class="result-container">
+                                <div class="result-left">
+                                    <h2 class="text-center mb-4">See how your pose looks in the analyzed Image</h2>
+                                    <div class="text-center">
+                                        <img src="{{ outputImagePath }}" alt="output-image" class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <div class="result-right">
+                                    <h2 class="text-center mb-4">Image Prediction Result</h2>
+                                    <div class="card bg-dark text-white">
+                                        <div class="card-body">
+                                            <h2 class="text-center">Yoga Pose Identified: {{ predictedLabel }}</h2>
+                                        </div>
+                                    </div>
+
+                                    <h2 class="text-center mt-4">Detailed Pose Guidance</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-block mb-3" style="text-decoration: none; color: #fff; cursor: pointer;">
+                                                <a href="{% url 'view_pose_description' %}" style="text-decoration: none; color: #fff; display: block; padding: 10px 20px; cursor: pointer;">View Pose Description</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'headerPage.html' %}
+{% load static %}
+{% block content%}
+
+<style>
+  body {
+    background-color: #f8f9fa; /* Light gray background */
+    background-image: url('{% static "Images/backgroundtry.png" %}'); /* Add your background image path */
+    background-size: cover; /* Ensure the background image covers the entire body */
+    background-attachment: fixed; /* Fixed background image */
+    background-position: center; /* Center the background image */
+ }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+  }
+
+  .image-item {
+    width: 100%;
+    height: 150px; /* Set the desired height for all images */
+    overflow: hidden; /* Ensure images don't exceed the specified height */
+  }
+
+  .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  }
+</style>
+
+<div class="image-grid">
+
+  {% for i in listOfImagesPath %}
+    <div class="image-item">
+      <img src={{ i }} alt="Image" loading="lazy">
+    </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Prediction of Yoga Poses</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+     <style>
+          body {
+               padding-top: 0;
+               margin: 0;
+               font-family: 'Arial', sans-serif;
+          }
+
+         
+
+          .navbar-actions {
+               display: flex;
+               justify-content: flex-end;
+               align-items: center;
+          }
+
+          .navbar {
+               overflow: hidden;
+               background-color: black;
+               
+           }
+   
+           .navbar a {
+               float: left;
+               display: block;
+               color: #f2f2f2;
+               text-align: center;
+               padding: 14px 16px;
+               text-decoration: none;
+           }
+   
+           .navbar a:hover {
+               background-color: #ddd;
+               color: black;
+           }
+   
+           .navbar .logo {
+               float: left;
+               color: white;
+           }
+   
+           .navbar .navbar-right {
+               float: right;
+           }
+     </style>
+     <!-- MAIN CSS -->
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- MENU -->
+     <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+               <div class="navbar">
+                    <div class="logo">
+                        <h1>Action description from 2D Human Body Postures</h2>
+                    </div>
+                    <div class="navbar-right">
+                        <div class="navbar-actions">
+                          <a href="/" class="smoothScroll">Home</a>
+                          <a href="viewDataBase" class="smoothScroll">View gallery</a>
+                     </div>
+                    </div>
+                </div>
+          </div>
+     </nav>
+
+     <!-- HOME -->
+     <div class="container">
+          {% block content%}
+          {% endblock %}
+     </div>
+
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>
