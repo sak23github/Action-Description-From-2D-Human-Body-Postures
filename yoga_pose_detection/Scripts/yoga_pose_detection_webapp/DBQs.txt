@@ -1,0 +1,89 @@
+CREATE TABLE `users` (
+  `userid` varchar(30) NOT NULL,
+  `usernm` varchar(40) DEFAULT NULL,
+  `pswd` varchar(30) DEFAULT NULL,
+  `usertype` varchar(30) DEFAULT NULL,
+  `userstatus` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `userdetails` (
+  `userid` varchar(30) NOT NULL,
+  `usernm` varchar(40) DEFAULT NULL,
+  `usertype` varchar(30) DEFAULT NULL,
+  `addr` varchar(200) DEFAULT NULL,
+  `pincode` varchar(30) DEFAULT NULL,
+  `mobileno` varchar(10) DEFAULT NULL,
+  `emailid` varchar(30) DEFAULT NULL,
+  `dob` varchar(30) DEFAULT NULL,
+  `gender` varchar(30) DEFAULT NULL,
+  `userstatus` varchar(30) DEFAULT NULL,
+  `photo` varchar(200) DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
+  `state` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `statemaster` (
+  `state` varchar(200) NOT NULL,
+  PRIMARY KEY (`state`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `cities` (
+  `city` text,
+  `state` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+DELIMITER $$
+CREATE  PROCEDURE `changePassword`(in userid1 varchar(200),in pass1 varchar(200))
+BEGIN
+update users set pswd=pass1 where userid=userid1;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE  PROCEDURE `chkPass`(in userid1 varchar(200),in pass1 varchar(200))
+BEGIN
+select * from users where userid=userid1 and pswd=pass1;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE  PROCEDURE `getcities`(in state1 varchar(200))
+begin
+select * from cities where state=state1;
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE   PROCEDURE `getstates`()
+begin
+select distinct(state) from statemaster;
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE  PROCEDURE `insertUser`(in userid1 varchar(200),in pass1 varchar(200), in userName1 varchar(200), in mob varchar(30), in emailId varchar(200)
+,city1 varchar(200),state1 varchar(200),in gender1 varchar(200),in addr1 varchar(200),in dob1 varchar(200),in pincode1 varchar(200),in photo1 varchar(200))
+begin
+insert into userdetails values(userid1,userName1,'user',addr1,pincode1,mob,emailId,dob1,gender1,'active',photo1,city1,state1);
+insert into users values(userid1,userName1,pass1,'user','active'); 
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE  PROCEDURE `updateLoginSts`(in userid1 varchar(200))
+begin
+ update loggedInUsers set sts='loggedOut' where userid=userid1 ;
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE  PROCEDURE `userlogin`(in userid1 varchar(200),in pass1 varchar(200))
+begin
+select *  from users where userid=userid1 and pswd=pass1 and userstatus='active';
+end$$
+DELIMITER ;

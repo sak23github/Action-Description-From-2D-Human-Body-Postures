@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+ 
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+     <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+ 
+
+</head>
+
+<body>
+  
+<div class="container-fluid">
+  <div class="jumbotron"> 
+
+     
+<div class="row">
+
+<div class="col-md-12"><h2>Human Posture Recognition</h2>
+   <div class="form-group"> 
+    
+
+<br/><div class="row"><div class="col-md-12">   
+<div class="camera">
+    <video id="video">Video stream not available.</video>
+    
+    
+</div></div></div>
+<br/>
+Canvas
+<br/><div style="background-image:url('../static/Photos/test/1001.jpg');background-size: 1200px;height: 900px;background-repeat: no-repeat ;"><button id="startbutton" class="btn btn-primary">Take photo</button></div>  
+<canvas id="canvas"></canvas><br/>
+  <input type="button" class="btn btn-primary" value="Send" onclick="send()" 
+          style="width: 200px; height: 30px;visibility: hidden;"/>
+          <form id="frmAuth" name="frmAuth" action="/submitPhoto/" method="post">
+       {% csrf_token %}   <input type="text" name="photo"  style="visibility: hidden;" id="photo"/>
+          <input type="submit" value="Submit" class="btn btn-primary"/>
+          </form>
+<script type="text/javascript">
+var width = 1200;
+var height = 0;
+var streaming = false;
+
+navigator.mediaDevices.getUserMedia({video: true, audio: false})
+        .then(function (stream) {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(function (err) {
+            console.log("An error occured! " + err);
+        });
+
+video.addEventListener('canplay', function (ev) {
+    if (!streaming) {
+        height = video.videoHeight / (video.videoWidth / width);
+        video.setAttribute('width', width);
+        video.setAttribute('height', height);
+        canvas.setAttribute('width', width);
+        canvas.setAttribute('height', height);
+
+        streaming = true;
+    }
+}, false);
+
+startbutton.addEventListener('click', function (ev) {
+    takepicture();
+    ev.preventDefault();
+}, false);
+
+clearphoto();
+
+function clearphoto() {
+    var context = canvas.getContext('2d');
+    context.fillStyle = "#AAA";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function takepicture() {
+    var context = canvas.getContext('2d');
+    if (width && height) {
+        canvas.width = width;
+        canvas.height = height;
+        context.drawImage(video, 0, 0, width, height);
+
+        var dataURL = canvas.toDataURL("image/jpeg", 0.95);
+        if (dataURL && dataURL != "data:,") {
+            var fileName = generateImageName();
+            uploadimage(dataURL, fileName);
+        } else {
+            alert("Image not available");
+        }
+    } else {
+        clearphoto();
+    }
+}
+
+function generateImageName() {
+	imageName="megha.jpg";
+    return imageName;
+}
+function send()
+{
+var imageData =  canvas.toDataURL();
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("POST", "/photoReceiver", true);
+xmlhttp.send(imageData);
+};
+function uploadimage(dataurl, filename) {
+   // alert(dataurl+' '+filename);
+   document.frmAuth.photo.value=canvas.toDataURL();
+}
+</script>
+
+
+ 
+ 
+</div></div>
+ <div class="col-md-12">
+ 
+ </div>
+</div>
+</div>
+ 
+
+</div>
+</body>
+</html>

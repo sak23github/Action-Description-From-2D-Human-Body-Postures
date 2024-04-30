@@ -1,0 +1,7 @@
+<select name="cities" class="form-control">
+    {% for rec in list %}
+    {% for val in rec %}
+    <option value={{val}}> {{val}}</option>
+    {% endfor %}
+{% endfor %}
+</select>

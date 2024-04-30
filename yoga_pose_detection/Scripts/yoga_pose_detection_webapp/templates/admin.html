@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Yoga Pose Detection</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	 <script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+ 
+	<!--// Meta tag Keywords -->
+
+	<!-- banner slider css file -->
+	<link href="/static/css/JiSlider.css" rel="stylesheet">
+	<!-- //banner slider css file -->
+
+	<!-- gallery-Swipe-box -->
+	<link rel="stylesheet" href="/static/css/swipebox.css">
+	<!-- //gallery-Swipe-box -->
+	
+	<!-- testimonials css -->
+	<link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
+	<!-- //testimonials css -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //web-fonts -->
+	
+</head>
+
+<body>
+	{% include "top.html" %}
+
+<!-- Welcome section -->
+<section class="welcome py-5 my-lg-5" id="login">
+<div class="container">
+   
+    <h2>Users</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>User Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Pincode</th>
+        </tr>
+        {% for rec in list %}
+        <tr>
+			{% for val in rec %}
+			<td> {{val}} </td>
+            
+			{% endfor %}</tr>
+		{% endfor %}
+
+    </table>
+</div>
+   
+	</section>
+    
+</body>
+</html>

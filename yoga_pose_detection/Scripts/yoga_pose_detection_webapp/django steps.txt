@@ -1,0 +1,22 @@
+g:
+mkdir django-setup
+cd django-setup
+pip install virtualenv
+virtualenv student_clubs
+cd student_clubs
+cd Scripts
+activate
+pip install django
+///django-admin startproject searchable_cloud_enc
+cd ClubsActivityTrackingSystem
+pthon manage.py runserver
+pip install pymysql
+pip install mysqlclient
+pip install cryptography
+pip install mysql-connector-python
+ 
+
+
+
+cd searchable_cloud_enc
+pthon manage.py runserver

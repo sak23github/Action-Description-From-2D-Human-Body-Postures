@@ -1,0 +1,419 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Action  Description from 2D Human Body Postures</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	 <script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	
+<script language="Javascript" type="text/javascript">
+ 
+
+	function createRequestObject() {
+		var tmpXmlHttpObject;
+		if (window.XMLHttpRequest) {
+				tmpXmlHttpObject = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+		return tmpXmlHttpObject;
+	}
+	
+	
+	var http = createRequestObject();
+	
+	function makeGetRequest(st) {
+	   // st=document.frm.state.value;
+	   
+		http.open('get', '/Cities?state=' + st);
+		http.onreadystatechange = processResponse;
+		http.send(null);
+	}
+	
+	function processResponse() {
+		if(http.readyState == 4){
+			var response = http.responseText;
+			document.getElementById('cities').innerHTML = response;
+		}
+	}
+	 
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- banner slider css file -->
+	<link href="../static/css/JiSlider.css" rel="stylesheet">
+	<!-- //banner slider css file -->
+
+	<!-- gallery-Swipe-box -->
+	<link rel="stylesheet" href="../static/css/swipebox.css">
+	<!-- //gallery-Swipe-box -->
+	
+	<!-- testimonials css -->
+	<link rel="stylesheet" href="../static/css/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
+	<!-- //testimonials css -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="../static/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //web-fonts -->
+	
+</head>
+
+<body>
+	<!-- Navigation -->
+	<div class="container-fluid ">
+		<!-- header top -->
+		<div class="head-wl d-md-flex py-6">
+			<div class="headder-w3 text-uppercase p-1 text-center">
+				<h1 class="rainbow-text"><a href="/home/">Action  Description from 2D Human Body Postures   </a></h1>
+			</div>
+
+			 
+		</div>
+		<!-- //header top -->
+	<div class="row"> <div class="container-fluid bg-faded"> 
+		<!-- Nav bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-faded">
+		  <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+			  <li class="nav-item active">
+				<a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#login">Login</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#reg">Registration</a>
+				 
+			  </li>
+			   <!--
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Dropdown link
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				  <a class="dropdown-item" href="typography.html">Typography</a>
+				  <a class="dropdown-item" href="error.html">404 page</a>
+				</div>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="contact.html">Contact</a>
+			  </li>-->
+			</ul>
+		  </div>
+		</nav></div></div>
+	<!-- Nav bar -->
+    </div>
+	<!-- //Navigation -->
+
+<!-- banner slider-->
+<div class="banner-silder">
+	<div id="JiSlider" class="jislider">
+		<ul>
+			<li>
+				<div class="w3layouts-banner-top">
+					<div class="bs-slider-overlay">
+						<div class="container">
+							<!-- Slide Text Layer -->
+							<div class="w3l-slide-text text-center">
+							 	 
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="w3layouts-banner-top w3layouts-banner-top1">
+					<div class="bs-slider-overlay">
+						<div class="container">
+							<!-- Slide Text Layer -->
+							<div class="w3l-slide-text text-center">
+								 	 
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="w3layouts-banner-top w3layouts-banner-top2">
+					<div class="bs-slider-overlay">
+						<div class="container">
+							<!-- Slide Text Layer -->
+							<div class="w3l-slide-text text-center">
+							 	 
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			 
+		</ul>
+	</div>
+</div>
+<!-- //banner slider -->
+
+<!-- Welcome section -->
+<section class="welcome py-5 my-lg-5" id="login">
+	 
+	<div class="container">
+		<div class="row ebox"><h3 class="heading text-center text-uppercase rainbow-text">Welcome to Action  Description from 2D Human Body Postures</h3>
+	
+			<div class="col-lg-6 welcome_left">
+				<img src="/static/images/login.gif" width="40%" alt="welcome image">
+			</div>
+			<div class="col-lg-6 welcome_right mt-5 py-5 px-4 ">
+				 <h2>Login</h2>
+				 <form name="frm" method="post" action="/login/">
+					{% csrf_token %}<table class="tblform">
+					<tr><td>Userid</td>
+					<td><input type="text" name="userid" required class="form-control"/> </td>
+					</tr>
+					<tr><td>Password</td>
+						<td><input type="password" required name="pass" class="form-control"/> </td>
+						</tr>
+						<tr><td colspan="2"><input type="submit" value="Submit" class="btn btn-primary"/> </td></tr>
+				 </table></form>
+				 <a href="/forgot/">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //Welcome section -->
+ 
+<!-- services -->
+<section class=" py-5  gback" id="reg">
+	
+	
+	<div class="container">
+		<div class="row ebox">
+			<div class="col-lg-6 welcome_left">
+				<img src="/static/images/reg.gif" width="60%" alt="welcome image">
+			</div>
+			<div class="col-lg-6 welcome_right mt-5 py-5 px-4"><h3 class="heading text-center text-uppercase rainbow-text">User Registration</h3>
+				<form name="frm" method="post" action="/registeruser/" enctype="multipart/form-data"><table class="tblform">
+					{% csrf_token %}<tr><td>Userid</td>
+					<td><input type="text" name="userid" class="form-control" required></td>
+					</tr>
+					<tr><td>User Name</td>
+					<td><input type="text" name="usernm" class="form-control" required></td>
+					</tr>
+					<tr><td>Password</td>
+					<td><input type="password" name="pswd" class="form-control" required>
+					 <input type="hidden" name="usertype" value="user"/>
+					</td>
+					</tr>
+				 
+					   <tr><td>Mobile Number</td>
+						   <td><input type="text" name="mobileno"  pattern="^\d{10}$" class="form-control" required></td></tr>
+					   <tr>
+						<td>Email Address</td>       
+					   <td><input type="text" name="emailid" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  class="form-control" required></td>
+					   </tr>
+					 
+													  <tr>
+													 <td>State
+													 </td>
+													 <td> 
+													  
+													 <select required name="state" class="form-control" onchange="makeGetRequest(this.value)">
+														{% for rec in list %}
+														{% for val in rec %}
+														<option value={{val}}> {{val}}</option>
+														{% endfor %}
+													{% endfor %}
+													</select>
+													 </td>
+													 </tr>
+													   <tr>
+													 <td>City
+													 </td>
+													 <td> 
+													<div id="cities"></div>
+													 </td>
+													 </tr>
+					   <tr>
+				<td>Gender</td>
+				<td>
+				  <input type="hidden" name="userstatus" value="active"/>
+				<input type="radio" name="gender" value="Male"   checked="checked" required >Male 
+				<input type="radio" name="gender" value="Female"  required>Female 
+				</td>
+				</tr>
+						
+						 <tr><td> Address</td>
+					<td><textarea  name="addr" class="form-control" required></textarea></td>
+					</tr>
+					<tr><td>Pincode</td>
+					<td><input type="text" name="pincode" class="form-control" required></td>
+					</tr>
+					  
+					   <tr>
+						   <td>Date Of Birth</td>
+						   <td><input type="date" name="dob" class="form-control"></td>
+					   </tr>
+					   <tr><td>Photo</td>
+					   <td>
+					   <input type="file" name="file" class="form-control"/>
+					   </td>
+					<tr>
+					<td><input type="submit" value="Submit" class="btn btn-primary" ></td>
+					</tr>
+					</table>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //services -->
+ 
+
+<!-- footer -->
+<footer>
+	<div class="footer-top">
+		<div class="container">
+			 
+			<div class="wthree_copy_right p-3">
+				<p class="text-capitalize">Copyright 2023 </p>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+<!-- Vertically centered Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-uppercase" id="exampleModalLongTitle">Indus Fact</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<img src="images/1.jpg" class="img-fluid mb-3" alt="Modal Image" />
+        Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum, ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //Vertically centered Modal -->
+
+
+<!-- js-scripts -->		
+
+	<!-- js -->
+	<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->	
+	
+	<!-- Banner Slider js script file-->
+		<script src="/static/js/JiSlider.js"></script>
+		<script>
+			$(window).load(function () {
+				$('#JiSlider').JiSlider({
+					color: '#fff',
+					start: 3,
+					reverse: true
+				}).addClass('ff')
+			})
+		</script>
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36251023-1']);
+			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+			_gaq.push(['_trackPageview']);
+
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<!-- //Banner Slider js script file-->
+
+	<!-- script-for-swipebox -->
+	<script src="/static/js/jquery.swipebox.min.js"></script> 
+	<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+	<!-- //script-for-swipebox -->
+
+	<!-- flexSlider --><!-- for testimonials -->
+	<script defer src="/static/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	</script>
+	<!-- //flexSlider --><!-- for testimonials -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="/static/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="/static/js/move-top.js"></script>
+	<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+<!-- //js-scripts -->
+
+</body>
+</html>

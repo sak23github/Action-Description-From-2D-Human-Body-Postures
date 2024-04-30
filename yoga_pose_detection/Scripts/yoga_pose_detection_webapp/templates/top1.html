@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Yoga Pose Detection</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	 <script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+ 
+	<!--// Meta tag Keywords -->
+
+	<!-- banner slider css file -->
+	<link href="/static/css/JiSlider.css" rel="stylesheet">
+	<!-- //banner slider css file -->
+
+	<!-- gallery-Swipe-box -->
+	<link rel="stylesheet" href="/static/css/swipebox.css">
+	<!-- //gallery-Swipe-box -->
+	
+	<!-- testimonials css -->
+	<link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
+	<!-- //testimonials css -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //web-fonts -->
+	
+</head>
+
+<body>
+	<!-- Navigation -->
+	<div class="container-fluid">
+		<!-- header top -->
+		<div class="head-wl d-md-flex py-6">
+			<div class="headder-w3 text-uppercase p-1 text-center">
+				<h1><a class="rainbow-text" href="/home">Action  Description from 2D Human Body Postures</a></h1>
+			</div>
+
+			 
+		</div>
+		<!-- //header top -->
+		<div class="row"> <div class="container-fluid bg-faded"> 
+		<!-- Nav bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-faded">
+		  <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+			  <li class="nav-item active">
+				<a class="nav-link" href="/user">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/upload">Upload Pose Image</a>
+				 
+			  </li><li class="nav-item">
+				<a class="nav-link" href="/takephoto">takephoto</a>
+				 
+			  </li>
+              <li class="nav-item">
+				<a class="nav-link" href="/logout">Logout</a>
+				 
+			  </li>
+			   <!--
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Dropdown link
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				  <a class="dropdown-item" href="typography.html">Typography</a>
+				  <a class="dropdown-item" href="error.html">404 page</a>
+				</div>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="contact.html">Contact</a>
+			  </li>-->
+			</ul>
+		  </div>
+		</nav></div></div>
+	<!-- Nav bar -->
+    </div>
+	<!-- //Navigation -->
+</div>
+<div class="container-fluid banner-silder">
+<!-- banner slider-->
+<div class="container">
+<h3 class="heading text-center text-uppercase color-white">{{request.session.user.utype}} Home</h3>
+ <p style="text-align: right;vertical-align: bottom;color: #CA4246;font-size: 30px;font-weight: bold;">  Logged in as {{request.session.user.userid}} ({{request.session.user.utype}})</p>
+</div></div>
+<!-- //banner slider -->
+
+</body>
+</html>
